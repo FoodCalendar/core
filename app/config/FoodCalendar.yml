@@ -1,0 +1,56 @@
+rdfa:
+    - { uri: https://raw.githubusercontent.com/schemaorg/schemaorg/master/data/schema.rdfa, format: rdfa }
+annotationGenerators:
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\PhpDocAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\DoctrineOrmAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\ConstraintAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\ApiPlatformCoreAnnotationGenerator
+namespaces:
+  entity: FoodCalendarBundle\Entity
+types:
+  CreativeWork:
+    parent: false
+    properties:
+      creator:
+        range: Person
+  Person:
+    parent: false
+    properties:
+      name: ~
+  Event:
+    parent: false
+    properties:
+      organizer:
+        range: Person
+      containsMenu:
+        range: Menu
+  Recipe:
+    parent: false
+    properties:
+      name: ~
+      description: ~
+      ingredients:
+        range: Ingredients
+      IsPartOf:
+        range: Menu
+      madeBy:
+        range: Person
+  Ingredients:
+    parent: false
+    properties:
+      name: { range: "string" }
+      price: { range: "integer" }
+      cal: { range: "integer" }
+      country: { range: "string" }
+      biological: { range: "boolean" }
+      IsPartOf:
+        range: Menu
+  Menu:
+    parent: false
+    properties:
+      madeBy:
+         range: Person
+      containsRecipe:
+         range: Recipe
+      IsPartOf:
+         range: Event

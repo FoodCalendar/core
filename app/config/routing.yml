@@ -1,0 +1,12 @@
+food_calendar:
+    resource: "@FoodCalendarBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+api:
+    resource: '.'
+    type:     'api_platform'
+
+NelmioApiDocBundle:
+    resource: '@NelmioApiDocBundle/Resources/config/routing.yml'
+    prefix:   '/doc'

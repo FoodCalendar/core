@@ -1,0 +1,43 @@
+# Example PHP Schema file
+# Use the following command to regenerate entities:
+# vendor/bin/schema generate-types src/ app/config/schema.yml
+
+rdfa:
+    - { uri: https://raw.githubusercontent.com/schemaorg/schemaorg/master/data/schema.rdfa, format: rdfa }
+annotationGenerators:
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\PhpDocAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\DoctrineOrmAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\ConstraintAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\ApiPlatformCoreAnnotationGenerator
+namespaces:
+  entity: AppBundle\Entity
+types:
+  Book:
+    parent: false
+    properties:
+      name: ~
+      description: ~
+      author:
+        range:       Person
+        cardinality: (*..*)
+      publisher:
+        range: Organization
+      isbn: ~
+      numberOfPages: ~
+      genre:
+          range: Text
+      datePublished: ~
+  Person:
+    parent: false
+    properties:
+      name: ~
+      description: ~
+      url: ~
+      birthDate: ~
+      gender: ~
+  Organization:
+    parent: false
+    properties:
+      name: ~
+      description: ~
+      url: ~
