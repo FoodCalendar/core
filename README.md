@@ -1,6 +1,9 @@
 FoodCalendar Base Core
 ======================
 
+This is under development.
+
+
 [![Join the chat at https://gitter.im/FoodCalendar/core](https://badges.gitter.im/FoodCalendar/core.svg)](https://gitter.im/FoodCalendar/core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Be ready to have some foods on a calendar, you will be able to do things like you never imagined to be doings, Scheduling dinner and stop throwing things in the trash,
